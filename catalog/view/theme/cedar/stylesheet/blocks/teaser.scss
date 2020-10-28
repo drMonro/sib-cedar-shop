@@ -1,0 +1,99 @@
+.teaser {
+  position: relative;
+  background-size: cover;
+  background-position: 180px -80px;
+  background-repeat: no-repeat;
+  padding: 23% 2%;
+  background-image: url("../image/teaser-desktop@1x.webp"), url("../image/teaser-desktop@1x.jpg");
+
+  @include desktop-retina {
+    background-image: url("../image/teaser-desktop@2x.webp"), url("../image/teaser-desktop@2x.jpg");
+  }
+
+  @include tablet-max {
+    background-image: url("../image/teaser-tablet@1x.webp"), url("../image/teaser-tablet@1x.jpg");
+    background-position: 220px -35px;
+
+    @include desktop-retina {
+      background-image: url("../image/teaser-tablet@2x.webp"), url("../image/teaser-tablet@2x.jpg");
+    }
+  }
+
+  @include tablet {
+    background-image: url("../image/teaser-mobile@1x.webp"), url("../image/teaser-mobile@1x.jpg");
+    padding: 42% 2%;
+    background-position: unset;
+
+    @include desktop-retina {
+      background-image: url("../image/teaser-mobile@2x.webp"), url("../image/teaser-mobile@2x.jpg");
+    }
+  }
+
+
+
+}
+
+.teaser-panel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  background-color: #fff;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.teaser-title {
+  position: absolute;
+  z-index: 100;
+  top: 20%;
+  left: 50px;
+  width: 30%;
+  margin: 0;
+  font-family: "montserrat", "Arial", sans-serif;
+  color: $grey;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  @include tablet {
+    width: 40%;
+
+  }
+
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  & span {
+    padding: 0 20px;
+    font-size: 84px;
+    line-height: 110px;
+
+    @include tablet-max {
+      font-size: 54px;
+      line-height: 66px;
+    }
+
+    @include tablet {
+      color: white;
+      font-size: 36px;
+      line-height: 45px;
+    }
+  }
+
+  & .teaser-title__marked {
+    background-color: $red;
+    color: white;
+  }
+
+}
+
+//.hamburger {
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}

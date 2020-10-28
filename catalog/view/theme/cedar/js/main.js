@@ -1,20 +1,18 @@
-import js from "./scripts/js";
+import {soloProduct} from "./scripts/soloProduct";
+import {mmenu} from "./scripts/mmenu";
+import {mhead} from "./scripts/mhead";
+import {header} from "./scripts/header";
 
 
-const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+// const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 class App {
     static init() {
-        // if (isSafari) {
-        //     window.console.log(`isSafari`);
-        // }
-        // if (window.objectFitImages) {
-        //   window.objectFitImages();
-        // }
 
-        js();
-
-
+        mmenu();
+        soloProduct();
+        mhead();
+        header();
     }
 }
 

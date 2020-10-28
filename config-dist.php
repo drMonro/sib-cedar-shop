@@ -1,14 +1,14 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://ckseveql.bget.tech/');
+define('HTTP_SERVER', 'http://sib-cedar.ru/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://ckseveql.bget.tech/');
+define('HTTPS_SERVER', 'https://sib-cedar.ru/');
 
 // DIR
-define('DIR_APPLICATION', '/home/c/ckseveql/ckseveql.bget.tech/public_htmll/catalog/');
-define('DIR_SYSTEM', '/home/c/ckseveql/ckseveql.bget.tech/public_html/system/');
-define('DIR_IMAGE', '/home/c/ckseveql/ckseveql.bget.tech/public_html/image/');
+define('DIR_APPLICATION', '/home/c/ckseveql/sib-cedar.ru/public_html/catalog/');
+define('DIR_SYSTEM', '/home/c/ckseveql/sib-cedar.ru/public_html/system/');
+define('DIR_IMAGE', '/home/c/ckseveql/sib-cedar.ru/public_html/image/');
 define('DIR_STORAGE', dirname(dirname(__FILE__)) . '/storage/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/theme/');

@@ -152,9 +152,9 @@ var cart = {
 			success: function(json) {
 				$('.alert-dismissible, .text-danger').remove();
 
-				if (json['redirect']) {
-					location = json['redirect'];
-				}
+				// if (json['redirect']) {
+				// 	location = json['redirect'];
+				// }
 
 				if (json['success']) {
 					$('#content').parent().before('<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');

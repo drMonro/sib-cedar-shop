@@ -1,0 +1,12 @@
+.product {
+  display: flex;
+  &__side-bar {
+    width: 30%;
+    background-image: url(../image/bg-wood.jpg);
+    background-size: cover;
+  }
+
+  & .product__wrapper {
+    width: 70%;
+  }
+}

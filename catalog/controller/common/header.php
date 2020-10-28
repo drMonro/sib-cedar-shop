@@ -48,17 +48,17 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		$this->load->language('common/header');
-		
-		
+
+
 		$host = isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1')) ? HTTPS_SERVER : HTTP_SERVER;
 		if ($this->request->server['REQUEST_URI'] == '/') {
 			$data['og_url'] = $this->url->link('common/home');
 		} else {
 			$data['og_url'] = $host . substr($this->request->server['REQUEST_URI'], 1, (strlen($this->request->server['REQUEST_URI'])-1));
 		}
-		
+
 		$data['og_image'] = $this->document->getOgImage();
-		
+
 
 
 		// Wishlist
@@ -71,7 +71,7 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
-		
+
 		$data['home'] = $this->url->link('common/home');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		$data['logged'] = $this->customer->isLogged();
@@ -86,7 +86,7 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
-		
+
 		$data['language'] = $this->load->controller('common/language');
 		$data['currency'] = $this->load->controller('common/currency');
 		$data['currency'] = $this->load->controller('common/currency');
@@ -99,6 +99,9 @@ class ControllerCommonHeader extends Controller {
 		$data['cart'] = $this->load->controller('common/cart');
 		$data['menu'] = $this->load->controller('common/menu');
 
-		return $this->load->view('common/header', $data);
+        $data['sprite'] = $this->load->controller('partial/sprite');
+
+
+        return $this->load->view('common/header', $data);
 	}
 }

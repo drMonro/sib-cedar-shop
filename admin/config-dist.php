@@ -1,18 +1,18 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://ckseveql.bget.tech/admin/');
-define('HTTP_CATALOG', 'http://ckseveql.bget.tech/');
+define('HTTP_SERVER', 'http://sib-cedar.ru/admin/');
+define('HTTP_CATALOG', 'http://sib-cedar.ru/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://ckseveql.bget.tech/admin/');
-define('HTTPS_CATALOG', 'http://ckseveql.bget.tech/');
+define('HTTPS_SERVER', 'https://sib-cedar.ru/admin/');
+define('HTTPS_CATALOG', 'https://sib-cedar.ru/');
 
 // DIR
-define('DIR_APPLICATION', '/home/c/ckseveql/ckseveql.bget.tech/public_html/admin/');
-define('DIR_SYSTEM', '/home/c/ckseveql/ckseveql.bget.tech/public_html/system/');
-define('DIR_IMAGE', '/home/c/ckseveql/ckseveql.bget.tech/public_html/image/');
+define('DIR_APPLICATION', '/home/c/ckseveql/sib-cedar.ru/public_html/admin/');
+define('DIR_SYSTEM', '/home/c/ckseveql/sib-cedar.ru/public_html/system/');
+define('DIR_IMAGE', '/home/c/ckseveql/sib-cedar.ru/public_html/image/');
 define('DIR_STORAGE', dirname(dirname(dirname(__FILE__))).'/storage/');
-define('DIR_CATALOG', '/home/c/ckseveql/ckseveql.bget.tech/public_html/catalog/');
+define('DIR_CATALOG', '/home/c/ckseveql/sib-cedar.ru/public_html/catalog/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');

@@ -60,35 +60,45 @@
         {# {{ currency }} #}
         {# {{ language }} #}
         <div id="top-links" class="nav">
-            <div id="logo">
-                {% if logo %}
-                    {% if home == og_url %}
-                        <img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive"/>
+
+            <div class="header-logo-wrapper">
+                <div id="logo">
+                    {% if logo %}
+                        {% if home == og_url %}
+                            <svg width="159" height="88">
+                                <use xlink:href="#logo"></use>
+                            </svg>
+                        {% else %}
+                            <a href="{{ home }}">
+                                <svg width="159" height="88">
+                                    <use xlink:href="#logo"></use>
+                                </svg>
+                            </a>
+                        {% endif %}
                     {% else %}
-                        <a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive"/></a>
+                        <h1><a href="{{ home }}">{{ name }}</a></h1>
                     {% endif %}
-                {% else %}
-                    <h1><a href="{{ home }}">{{ name }}</a></h1>
-                {% endif %}
+                </div>
+
+{#                <div class="header__bulk-link">#}
+                    <a class="button link-border" href="http://sib-cedar/bulk-info">Оптовым клиентам</a>
+{#                </div>#}
+
             </div>
+
+
             <div class="header-menu">
                 <ul class="header-list list-inline">
                     {# <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li> #}
-                    <li class="mh-btns-left">
-                        <a class="hamburger hamburger--collapse" href="#my-menu">
-                        <span class="hamburger-box">
-                          <span class="hamburger-inner"></span>
-                        </span>
-                        </a>
-                    </li>
+
                     <li class="dropdown">
                         <a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown">
                             {% if logged %}
-                                <svg width="29" height="27">
+                                <svg class="header-loged" width="58" height="54">
                                     <use xlink:href="#enter-logged"></use>
                                 </svg>
                             {% else %}
-                                <svg width="24" height="24">
+                                <svg class="header-login" width="50" height="50">
                                     <use xlink:href="#enter"></use>
                                 </svg>
                             {% endif %}
@@ -107,6 +117,13 @@
                         </ul>
                     </li>
                     <li class="">{{ cart }}</li>
+                    <li class="mh-btns-left">
+                        <a class="hamburger hamburger--collapse" href="#my-menu">
+                        <span class="hamburger-box">
+                          <span class="hamburger-inner"></span>
+                        </span>
+                        </a>
+                    </li>
                 </ul>
 
                 <nav id="my-menu">

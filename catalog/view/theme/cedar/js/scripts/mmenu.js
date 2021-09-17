@@ -7,7 +7,8 @@ const mmenu = () => {
                     "parent": true
                 },
                 navbar: {
-                    title: '<img src="catalog/view/theme/cedar/image/svg/exit.svg" alt="Выйти из меню">'
+                    title: '<button class="menu-close"><svg width="54" height="54"><use xlink:href="#exit"></use></svg></button>'
+
                 },
                 "extensions": [
                     // "position-back",

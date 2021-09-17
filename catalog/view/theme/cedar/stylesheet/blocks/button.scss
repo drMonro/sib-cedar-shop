@@ -7,32 +7,25 @@
   overflow: hidden;
   text-transform: uppercase;
   border: none;
-  min-height: 59px;
-  font-size: 27px;
-  line-height: 29px;
+  min-height: auto;
+  font-size: 40px;
+  padding: 20px;
   border-radius: 25px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   outline: none;
-  //padding: 10px 42px;
-  //box-sizing: border-box;
+  font-family: "montserrat", "Arial", sans-serif;
+  font-weight: 700;
 
-  .buttton__title {
-    margin: 0;
-    //padding: 10px 0;
-    display: inline-block;
-    //box-sizing: border-box;
+  @include desktop-max {
+    font-size: 25px;
   }
 
-  span {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background-color: green;
-    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+  @include desktop {
+    font-size: 20px;
+  }
+
+  @include mobile {
+    font-size: 14px;
   }
 
   &:hover {
@@ -49,4 +42,45 @@
   &:active {
     background-color: $red;
   }
+}
+
+.link-border {
+  width: 280px;
+  background-color: transparent;
+  box-shadow: unset;
+  border: 1px solid #96B433;
+  padding: 5px 8px;
+  text-align: center;
+  //font-size: 20px;
+  //line-height: 27px;
+
+  @include tablet {
+    font-size: 10px;
+    width: 230px;
+  }
+
+  @include mobile {
+    position: absolute;
+    bottom: 8px;
+  }
+
+
+
+    &:hover {
+    border-width: 2px;
+    background-color: transparent;
+  }
+  & span {
+
+    @include tablet {
+
+      font-size: 6px;
+      font-weight: 700;
+
+    }
+  }
+
+
+
+
 }

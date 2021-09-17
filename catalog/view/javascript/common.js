@@ -133,6 +133,8 @@ $(document).ready(function() {
 	$(document).ajaxStop(function() {
 		$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
 	});
+
+	// cart.refresh()
 });
 
 // Cart add remove functions
@@ -189,7 +191,7 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					$('#cart > button').html('<div id="cart-total"><svg width="48" height="48"> <use xlink:href="#cart"></use> </svg><span>' + json['total'] + '</span></div>');
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -218,7 +220,11 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					if (json['total'] > 0) {
+						$('#cart > button').html('<div id="cart-total"><svg width="48" height="48"> <use xlink:href="#cart"></use> </svg><span>' + json['total'] + '</span></div>');
+					} else {
+						$('#cart > button').html('<div id="cart-total"><svg width="48" height="48"> <use xlink:href="#cart"></use> </svg></div>');
+					}
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {

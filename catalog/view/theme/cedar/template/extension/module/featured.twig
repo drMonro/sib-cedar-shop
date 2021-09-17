@@ -64,7 +64,7 @@
                         <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
                         <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control"/>
 
-                        <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');" id="button-cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+                        <button type="button" id="button-cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
                         {# <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button> #}
                         {# <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button> #}
                     </div>
@@ -94,8 +94,9 @@
             },
             success: function (json) {
                 if (json['error']) {
-                    // console.log(json['error'])
                     if (json['error']['option']) {
+                        console.log('error');
+
                         for (i in json['error']['option']) {
                             var element = $('#input-option' + i.replace('_', '-'));
 
@@ -115,18 +116,22 @@
 
                 if (json['success']) {
                     console.log(json);
+                    alert("!!")
 
                     // $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
                     // $('#cart > button').html('<span id="cart-total">' + json['total'] + '</span>');
-                    $('#cart > button').html('<span id="cart-total">' + json['total'] + '</span>');
+                    // $('#cart > button').html('<span id="cart-total">' + json['total'] + '</span>');
+                    $('#cart > button').html('<div id="cart-total"><svg width="48" height="48"> <use xlink:href="#cart"></use> </svg><span>' + json['total'] + '</span></div>');
 
-                    $('html, body').animate({scrollTop: 0}, 'slow');
+                    // $('html, body').animate({scrollTop: 0}, 'slow');
 
                     $('#cart > ul').load('index.php?route=common/cart/info ul li');
                 }
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 // console.log('json-er')
+                console.log('error');
+
 
                 alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
             }
